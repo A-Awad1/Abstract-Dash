@@ -1,0 +1,4 @@
+*.vue linguist-detectable=true
+*.js linguist-detectable=true
+*.md linguist-detectable=false
+*.json linguist-detectable=false

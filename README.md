@@ -2,6 +2,10 @@
 
 This documentation highlights the key features and technologies used throughout the project. It provides a complete guide to running the project, configuring environment variables, exploring available server APIs, and reviewing developer notes.
 
+## Source Code
+
+This is a **premium project** and the source code is **private** and not publicly available.
+
 ## Overview
 
 This project provides a fully generic and modern dashboard built with **Nuxt 3 (Vue 3 + SSR)**, designed to be highly adaptable and customizable for any type of business. It serves as a flexible template that can be adapted to different domains without being tied to specific business logic.
@@ -10,10 +14,6 @@ This project provides a fully generic and modern dashboard built with **Nuxt 3 (
 
 - **Live Demo**: [abstract-dash.vercel.app](https://abstract-dash.vercel.app/)
 - **Video Showcase**: [youtu.be/tVZOahAj5vc](https://youtu.be/tVZOahAj5vc)
-
-## Source Code
-
-The source code is **private** and not publicly available.
 
 ## Quick Start
 
@@ -28,7 +28,7 @@ Get the project up and running in just a few steps:
    Open your terminal inside the project folder and run: `npm install`
 
 3. **Run Development Server**  
-   Start the development server with: `npm run dev`  
+   Start the development server with: `npm run dev`
 
 4. **Build for Production (optional)**  
    To create a production build, run: `npm run build` then `npm run preview`
@@ -48,7 +48,7 @@ The local server runs at [http://localhost:3000](http://localhost:3000)
   Complete **Create, Read, Update, Delete** functionality for managing items with ease.
 
 - **Validation**  
-  Built-in client-side form validation on Add & Update operations ensures better data quality before submission.
+  Built-in client-side validation ensures required fields are filled and follow proper formatting during **Add** and **Update** operations. This prevents invalid submissions and improves overall data quality before sending to the server.
 
 - **File & Image Upload**  
   Uploading images and files using dialog upload or drag-and-drop area.
@@ -58,22 +58,39 @@ The local server runs at [http://localhost:3000](http://localhost:3000)
   `text`, `number`, `date`, `status`, `favorite`, `price`, `rating`, `progress`, `color`, `email`, `phone`, `range`, `map`, `image`, and `file`.
 
 - **Advanced Data Table**  
-  Interactive tables with: **Pagination, Sorting, Quick Search, Advanced Filtering**, Column Visibility Toggle, Items per Page Control
+  Interactive table with: **Pagination, Sorting, Quick Search, Advanced Filtering**, Column Visibility Toggle, Items per Page Control
 
 - **Single & Bulk Deletion**  
   Delete individual items or perform bulk deletions using checkbox row selections.
 
-- **Dashboard Overview**  
-  Abstract dashboard page featuring KPIs, charts, summaries, and map for quick insights.
-
 - **Modern UI/UX**  
   Beautiful, responsive design with vibrant colors and smooth animations.
+
+- **Dark / Light Mode**  
+  Built-in support for theme switching with smooth transitions. Users can seamlessly switch between **Light** and **Dark** themes for a personalized experience.
 
 - **Responsive Layout**  
   Fully optimized for all screen sizes: mobile, tablet, and desktop following a mobile-first approach.
 
 - **Cross-Browser Support**  
   Tested and optimized to work seamlessly across all major browsers, including **Chrome, Firefox, Safari, Edge, and Opera**.
+
+- **Dashboard Overview Page**  
+  Abstract dashboard page featuring KPIs, charts, summaries, and map for quick insights.
+
+- **Internal Documentation Page**  
+  A built-in **Docs page** powered by **Markdown** using `@nuxt/content`. The content is written in a single `.md` file and automatically transformed into a fully styled **HTML page** inside the app, ensuring consistent design and easy maintenance.
+
+- **Settings Page**  
+  A dedicated internal page that provides a centralized place for user preferences:  
+  **- Switch Theme Mode**: Choose between Light and Dark.  
+  **- Change Language**: Switch instantly between English and Arabic.  
+  **- Pick Primary Color**: Pick a custom identity color to be applied across the app.  
+  **- Live Preview Section**: A real-time preview panel that reflects all local changes to **color, theme, and language** instantly — without refreshing the page. It also shows the global static colors for consistency while testing custom options.  
+  **- Configure File Upload Storage**: Select the preferred storage strategy — **Vercel Blob** (recommended) or **Binary Fallback** (store in MongoDB).
+
+- **Persistent Preferences with Cookies**  
+  User settings such as **theme mode, language, and primary color** are stored in cookies to ensure a seamless experience. Preferences are remembered across sessions without requiring reconfiguration each time.
 
 - **Demo Mode Toggle**  
   A switch to enable **read-only mode**, preventing data modifications during demos.
@@ -133,7 +150,7 @@ _Database & Storage_
 
 _Others_
 
-- **@nuxt/content** – Content management with Markdown, YAML, CSV or JSON support.
+- **@nuxt/content** – Manage content with Markdown, YAML, CSV, or JSON files, which are automatically converted into fully HTML pages.
 - **Formidable** – Handling file uploads on the server.
 - **lodash.debounce** – Utility for performance optimization (debounce).
 - **Mobile-First Design** – All UI/UX decisions follow a mobile-first approach to ensure responsiveness across devices.
@@ -163,14 +180,16 @@ The project is organized in a clean and modular way, following Nuxt 3 convention
 _Main Files_
 
 - **.env** – Environment variables (not committed, see `.env.example`).
-- **.gitignore** – Git ignore rules.
-- **README.md** – Project documentation.
+- **README.md** – Quick introduction and setup guide for getting started with the project.
 - **package.json** – Dependencies, scripts, and metadata.
 - **nuxt.config.ts** – Main Nuxt configuration.
 - **tsconfig.json** – TypeScript configuration.
 - **eslint.config.mjs** – ESLint configuration.
 - **content.config.ts** – Nuxt Content configuration.
 - **app.vue** – Root application entry.
+- **CHANGELOG.md** – Tracks all notable changes, features, and fixes over project versions.
+- **.editorconfig** – Ensures consistent coding styles across different editors.
+- **.gitignore** – Git ignore rules.
 
 _Core Directories_
 
@@ -183,22 +202,23 @@ _Core Directories_
 
 _Content & Localization_
 
-- **/content** – Markdown, YAML, CSV or JSON files content (managed by `@nuxt/content`).
+- **/content**
+  - `documentation.md` – Main docs file powering the internal Documentation page.
 - **/i18n**
   - `/locales/ar.json` – Arabic translations.
   - `/locales/en.json` – English translations.
-
-_Backend (Nitro)_
-
-- **/server**
-  - `/api` – API endpoints.
-  - `/db` – Database connections (MongoDB).
 
 _State & Utilities_
 
 - **/stores** – Pinia stores for state management.
 - **/types** – TypeScript type definitions.
 - **/utils** – Utility constants and functions.
+
+_Backend (Nitro)_
+
+- **/server**
+  - `/api` – API endpoints.
+  - `/db` – Database connections (MongoDB).
 
 ## Single File Components (SFCs)
 
@@ -361,6 +381,8 @@ The project supports **two storage strategies** for handling uploaded **files an
 - Files are then retrieved through the custom API endpoint: `/api/download?name=<filename>`
 - Suitable small files, but uploading many/large files will increase MongoDB size.
 
+> Storage strategy can be switched from the **Settings Page**, allowing choice between **Vercel Blob Storage** and **Binary Uploads**.
+
 ## Server API (Endpoints)
 
 Most server endpoints are exposed under `/server/api` using Nuxt server routes.
@@ -384,7 +406,7 @@ _`GET /api/items`_
 
 ```json
 {
-  "items": [/* Array of Item objects */],
+  "items": [], // Array of Item objects
   "page": 1,
   "perPage": 10,
   "total": 100
@@ -398,7 +420,7 @@ _`GET /api/items/:id`_
 
 ```json
 {
-  "_id": "68a0e7976335b77d13c5d218" /* related to mongoDB */,
+  "_id": "68a0e7976335b77d13c5d218", // related to mongoDB
   "id": 3,
   "smallText": "item 3",
   "largeText": "Ut enim ad minim veniam, quis nostrud exercitation",
@@ -474,21 +496,14 @@ _`GET /api/items/dashboard`_
   "allActive": 40,
   "allInactive": 30,
   "allPending": 30,
-  "allRating": [/* all rating numbers */],
-  "allProgress": [/* all progress numbers */],
-  "allLocation": [/* Location objects */],
-  "topProgress": [/* Item objects */],
-  "recentItems": [/* Item objects */],
-  "topFavorites": [/* Item objects */]
+  "allRating": [], // Rating numbers
+  "allProgress": [], // Progress numbers
+  "allLocation": [], // Locations objects
+  "topProgress": [], // Items objects
+  "recentItems": [], // Items objects
+  "topFavorites": [] // Items objects
 }
 ```
-
-## Validation
-
-Form validation is implemented on the **frontend** during both **Add** and **Update** operations.  
-It ensures that all required fields are filled and follow basic formatting rules before sending data to the server.
-
-This prevents invalid or incomplete submissions and improves the overall data quality.
 
 ## Installation
 

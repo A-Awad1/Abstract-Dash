@@ -13,7 +13,7 @@ This project provides a fully generic and modern dashboard built with **Nuxt 3 (
 ## Demo & Showcase
 
 - **Live Demo**: [abstract-dash.vercel.app](https://abstract-dash.vercel.app/)
-- **Video Showcase**: [youtu.be/tVZOahAj5vc](https://youtu.be/tVZOahAj5vc)
+- **Video Showcase**: [youtu.be/O9zOdETkGm8](https://youtu.be/O9zOdETkGm8)
 
 ## Quick Start
 

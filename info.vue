@@ -15,5 +15,5 @@ Written in SCSS (not scoped), leveraging global SCSS helpers, variables, mixins,
 </style>
 
 <!-- 
-All Vue components in the project follow a consistent structure, clean code and coding standards to ensure readability, scalability, and maintainability. The Code Length in Each component is limited to a maximum of 200 lines (enforced by ESLint). 
+All Vue components follow a consistent structure, clean code and coding standards to ensure readability, scalability, and maintainability. The Code Length in Each component is limited to a maximum of 200 lines (enforced by ESLint). 
 -->

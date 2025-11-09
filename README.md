@@ -12,7 +12,7 @@ This project provides a fully generic and modern dashboard built with **Nuxt 3 (
 
 ## Demo & Showcase
 
-- **Live Demo**: [abstract-dash.netlify.app](https://abstract-dash.netlify.app/)
+- **Live Demo**: [abstract-dash.netlify.app/dashboard](https://abstract-dash.netlify.app/dashboard)
 - **Video Showcase**: [vimeo.com/1134239725](https://vimeo.com/1134239725)
 
 ## Quick Start

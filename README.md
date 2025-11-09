@@ -244,7 +244,7 @@ Before setting up the project, make sure you have the following installed and re
 - **Environment Variables** – Required keys must be configured (see the **Environment Variables** section for details).
 
 > ⚠️ **MongoDB Network Access**:  
-> If deploying to a hosting service (e.g., Vercel, Netlify), make sure your **MongoDB IP whitelist** allows external connections. You can set it to `0.0.0.0/0` (allow from anywhere) during development, but in production it’s strongly recommended to restrict to trusted IPs for better security.
+> If deploying to a hosting service (e.g., Netlify), make sure your **MongoDB IP whitelist** allows external connections. You can set it to `0.0.0.0/0` (allow from anywhere) during development, but in production it’s strongly recommended to restrict to trusted IPs for better security.
 
 > ⚠️ **Binary Upload Fallback**:  
 > When falling back to binary upload, files are stored directly inside MongoDB (as binary). Uploading **large or many files** will increase the database size and may slow down queries. It is recommended to use **Vercel Blob**.
@@ -301,7 +301,7 @@ _Database (MongoDB)_
   - `MONGO_COLLECTION` – collection name
 
 > ⚠️ **MongoDB Network Access**:  
-> If deploying to a hosting service (e.g., Vercel, Netlify), make sure your **MongoDB IP whitelist** allows external connections. You can set it to `0.0.0.0/0` (allow from anywhere) during development, but in production it’s strongly recommended to restrict to trusted IPs for better security.
+> If deploying to a hosting service (e.g. Netlify), make sure your **MongoDB IP whitelist** allows external connections. You can set it to `0.0.0.0/0` (allow from anywhere) during development, but in production it’s strongly recommended to restrict to trusted IPs for better security.
 
 - Initial Data
 
